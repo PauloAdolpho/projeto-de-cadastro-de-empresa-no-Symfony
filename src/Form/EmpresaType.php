@@ -19,7 +19,7 @@ class EmpresaType extends AbstractType
             ->add('email')
             ->add('ramoDeAtividade')
             ->add('numeroDeFuncionarios')
-            ->add('usuario')
+            // ->add('usuario')
         ;
     }
 

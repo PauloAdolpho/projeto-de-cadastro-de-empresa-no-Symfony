@@ -1,6 +1,43 @@
-{% extends 'form.html.twig' %}
-{% block body %}
-<pre>
-  {{ dump(form) }}
-</pre>
-{% endblock %}
+{% extends 'base.html.twig' %}
+{% block title %}{% endblock %}
+  {% block body %}
+  {{ form_start(form) }}
+  <div class="form-group">
+    <div class="container">
+      <div class="form-row">
+        <div class="col-6">
+          {{ form_label(form.nome) }} 
+          {{ form_widget(form.nome) }}
+        </div>     
+        <div class="col-6">
+          {{ form_label(form.endereco) }}
+          {{ form_widget(form.endereco) }}
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="form-row">
+        <div class="col-6">
+          {{ form_label(form.telefone) }}
+          {{ form_widget(form.telefone) }}
+        </div>
+        <div class="col-6">
+          {{ form_label(form.cpf) }}
+          {{ form_widget(form.cpf) }}
+        </div>         
+      </div>
+        <div class="col-4">
+          {{ form_label(form.dataDeNascimento) }}
+          {{ form_widget(form.dataDeNascimento) }}
+        </div>
+    </div>    
+    <div class="container">
+      <div class="form-row">
+        <div class="col-4">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{ form_end(form) }}
+{% endblock %} 

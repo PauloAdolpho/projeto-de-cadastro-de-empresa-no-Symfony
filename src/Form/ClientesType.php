@@ -17,7 +17,7 @@ class ClientesType extends AbstractType
             ->add('telefone')
             ->add('endereco')
             ->add('cpf')
-            ->add('usuario')
+            // ->add('usuario')
         ;
     }
 
