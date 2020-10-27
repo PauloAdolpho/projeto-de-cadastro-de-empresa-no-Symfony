@@ -4,32 +4,36 @@
   {{ form_start(form) }}
   <div class="form-group">
     <div class="container">
-    <div class="form-row">
-        <div class="col-4">
-      {{ form_label(form.nome) }} 
-      {{ form_widget(form.nome, {'attr':{'class':'form-control'}}) }}
-      </div>
-      <div class="col-4">
-      {{ form_label(form.eMail) }}
-      {{ form_widget(form.eMail, {'attr':{'class':'form-control'}}) }}
-      </div>
-      </div>
-      </div>
-      <div class="container">
       <div class="form-row">
-      <div class="col-4">
-      {{ form_label(form.senha) }}
-      {{ form_widget(form.senha, {'attr':{'class':'form-control'}}) }}
+        <div class="col-4 m-2">
+        {{ form_label(form.nome) }} 
+        {{ form_widget(form.nome, {'attr':{'class':'form-control'}}) }}
+        </div>
+        <div class="col-4 m-2">
+        {{ form_label(form.eMail) }}
+        {{ form_widget(form.eMail, {'attr':{'class':'form-control'}}) }}
+        </div>
       </div>
-      <div class="col-4">
-      {{ form_label(form.nivelAcesso) }}
-      {{ form_widget(form.nivelAcesso, {'attr':{'class':'form-control'}}) }}
+    </div>
+    <div class="container">
+      <div class="form-row">
+        <div class="col-4 m-2">
+          {{ form_label(form.senha) }}
+          {{ form_widget(form.senha, {'attr':{'class':'form-control'}}) }}
+        </div>
+        <div class="col-4 m-2">
+          {{ form_label(form.nivelAcesso) }}
+          {{ form_widget(form.nivelAcesso, {'attr':{'class':'form-control'}}) }}
+        </div>
       </div>
+    </div>
+    <div class="container">
+      <div class="form-row">
+        <div class="col-8 m-4 text-right"> 
+          <button type="submit" class="btn btn-primary">Submit</button> 
+        </div>
       </div>
-      </div>   
-      <div class="col m-2"> 
-      <button type="submit" class="btn btn-primary">Submit</button> 
-      </div>
+    </div>
   </div>  
   {{ form_end(form) }}
 {% endblock %}

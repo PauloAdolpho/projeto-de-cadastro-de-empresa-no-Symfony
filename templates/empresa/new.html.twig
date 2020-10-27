@@ -6,42 +6,50 @@
     <div class="form-row ">
     <div class="container">
     <div class="input-group">
-      <div class="col-4">
+      <div class="col-3 m-2">
         {{ form_label(form.razaoSocial) }} 
         {{ form_widget(form.razaoSocial, {'attr':{'class':'form-control'}}) }}
       </div> 
-      <div class="col-4">
+      <div class="col-3 m-2">
       {{ form_label(form.cnpj) }}
       {{ form_widget(form.cnpj, {'attr':{'class':'form-control'}}) }}
       </div>
-      <div class="col-4">
+      <div class="col-3 m-2">
       {{ form_label(form.endereco) }}
       {{ form_widget(form.endereco, {'attr':{'class':'form-control'}}) }}
       </div>
       </div>
+      </div>
       <div class="container">
       <div class="form-row ">
-      <div class="col-4">
+      <div class="input-group">
+      <div class="col-3 m-2">
       {{ form_label(form.telefone) }}
       {{ form_widget(form.telefone, {'attr':{'class':'form-control'}}) }}
       </div>
-      <div class="col-4">
+      <div class="col-3 m-2">
       {{ form_label(form.email) }}
       {{ form_widget(form.email, {'attr':{'class':'form-control'}}) }}
       </div>
-      <div class="col-4">
+      <div class="col-3 m-2">
       {{ form_label(form.ramoDeAtividade) }}
       {{ form_widget(form.ramoDeAtividade, {'attr':{'class':'form-control'}}) }}
       </div>
       </div>
-      <div class="col-4">
+      </div>
+       </div>
+      <div class="container">
+      <div class="form-row ">
+      <div class="input-group">
+      <div class="col-3 m-2">
       {{ form_label(form.numeroDeFuncionarios) }}
       {{ form_widget(form.numeroDeFuncionarios, {'attr':{'class':'form-control'}}) }}
-      </div>
-      </div>
-      </div>
-      <div class="col m-2 text-right">
+      </div>   
+      <div class="col-6 m-4 text-right">
       <button type="submit" class="btn btn-primary">Submit</button> 
+      </div>
+      </div>
+      </div>
       </div>
       </div>
   </div>  
