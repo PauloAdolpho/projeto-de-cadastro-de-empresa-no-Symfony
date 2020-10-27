@@ -16,7 +16,7 @@
                 <td>{{ cliente.nome }}</td>
             </tr>
             <tr>
-                <th>DataDeNascimento</th>
+                <th>Data de nascimento</th>
                 <td>{{ cliente.dataDeNascimento ? cliente.dataDeNascimento|date('Y-m-d') : '' }}</td>
             </tr>
             <tr>
@@ -24,19 +24,19 @@
                 <td>{{ cliente.telefone }}</td>
             </tr>
             <tr>
-                <th>Endereco</th>
+                <th>Endereço</th>
                 <td>{{ cliente.endereco }}</td>
             </tr>
             <tr>
-                <th>Cpf</th>
+                <th>CPF</th>
                 <td>{{ cliente.cpf }}</td>
             </tr>
         </tbody>
     </table>
      <div style="font-weight:bold" class="form-row col-4 ml-4 mt-0 text-">
-    <a href="{{ path('clientes_index') }}">Back to List</a>  
+    <a href="{{ path('clientes_index') }}">Voltar para lista</a>  
     <div class="ml-4">
-    <a href="{{ path('clientes_edit', {'id': cliente.id}) }}">Edit</a>
+    <a href="{{ path('clientes_edit', {'id': cliente.id}) }}">Editar</a>
     </div>
     </div>
     </div>

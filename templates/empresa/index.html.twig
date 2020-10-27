@@ -9,14 +9,14 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>RazaoSocial</th>
-                <th>Cnpj</th>
+                <th>Razão social</th>
+                <th>CNPJ</th>
                 <th>Endereco</th>
                 <th>Telefone</th>
-                <th>Email</th>
-                <th>RamoDeAtividade</th>
-                <th>NumeroDeFuncionarios</th>
-                <th>actions</th>
+                <th>E-mail</th>
+                <th>Ramo de atividade</th>
+                <th>Número de funcionários</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -31,8 +31,8 @@
                 <td>{{ empresa.ramoDeAtividade }}</td>
                 <td>{{ empresa.numeroDeFuncionarios }}</td>
                 <td>
-                    <a href="{{ path('empresa_show', {'id': empresa.id}) }}">show</a>
-                    <a href="{{ path('empresa_edit', {'id': empresa.id}) }}">edit</a>
+                    <a href="{{ path('empresa_show', {'id': empresa.id}) }}">Mostrar</a>
+                    <a href="{{ path('empresa_edit', {'id': empresa.id}) }}">Editar</a>
                 </td>
             </tr>
         {% else %}
@@ -43,5 +43,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('empresa_new') }}">Create new</a>
+    <a href="{{ path('empresa_new') }}">Criar novo</a>
 {% endblock %}

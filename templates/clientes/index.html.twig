@@ -10,11 +10,11 @@
             <tr>
                 <th>Id</th>
                 <th>Nome</th>
-                <th>DataDeNascimento</th>
+                <th>Data de nascimento</th>
                 <th>Telefone</th>
-                <th>Endereco</th>
-                <th>Cpf</th>
-                <th>actions</th>
+                <th>Endereço</th>
+                <th>CPF</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -27,8 +27,8 @@
                 <td>{{ cliente.endereco }}</td>
                 <td>{{ cliente.cpf }}</td>
                 <td>
-                    <a href="{{ path('clientes_show', {'id': cliente.id}) }}">show</a>
-                    <a href="{{ path('clientes_edit', {'id': cliente.id}) }}">edit</a>
+                    <a href="{{ path('clientes_show', {'id': cliente.id}) }}">Mostrar</a>
+                    <a href="{{ path('clientes_edit', {'id': cliente.id}) }}">Editar</a>
                 </td>
             </tr>
         {% else %}
@@ -39,5 +39,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('clientes_new') }}">Create new</a>
+    <a href="{{ path('clientes_new') }}">Criar novo</a>
 {% endblock %}

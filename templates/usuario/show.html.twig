@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Usuario{% endblock %}
+{% block title %}Usuário{% endblock %}
 
 {% block body %}
-    <h1>Usuario</h1>
+    <h1>Usuário</h1>
 
     <table class="table">
         <tbody>
@@ -16,7 +16,7 @@
                 <td>{{ usuario.nome }}</td>
             </tr>
             <tr>
-                <th>EMail</th>
+                <th>E-mail</th>
                 <td>{{ usuario.eMail }}</td>
             </tr>
             <tr>
@@ -24,16 +24,16 @@
                 <td>{{ usuario.senha }}</td>
             </tr>
             <tr>
-                <th>NivelAcesso</th>
+                <th>Nível de acesso</th>
                 <td>{{ usuario.nivelAcesso }}</td>
             </tr>
         </tbody>
     </table>
 
      <div style="font-weight:bold" class="form-row col-4 ml-4 mt-0 text-">
-    <a href="{{ path('usuario_index') }}">Back to List</a>  
+    <a href="{{ path('usuario_index') }}">Voltar para lista</a>  
     <div class="ml-4">
-    <a href="{{ path('usuario_edit', {'id': usuario.id}) }}">Edit</a>
+    <a href="{{ path('usuario_edit', {'id': usuario.id}) }}">Editar</a>
     </div>
     </div>
     </div>
