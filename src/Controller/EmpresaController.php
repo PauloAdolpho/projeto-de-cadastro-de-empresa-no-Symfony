@@ -5,9 +5,11 @@ namespace App\Controller;
 use App\Entity\Empresa;
 use App\Form\EmpresaType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Serializer\SerializerInterface;
 
 /**
  * @Route("/empresa")
@@ -26,6 +28,17 @@ class EmpresaController extends AbstractController
         return $this->render('empresa/index.html.twig', [
             'empresas' => $empresas,
         ]);
+    }
+       /**
+     * @Route("/empresa-ajax", name="empresa_ajax", methods={"POST"})
+     */
+    public function empresaAjax(SerializerInterface $serialize): Response
+    {
+        $empresas = $this->getDoctrine()
+            ->getRepository(Empresa::class)
+            ->findAll();
+
+            return new JsonResponse($serialize->normalize($empresas));
     }
 
     /**

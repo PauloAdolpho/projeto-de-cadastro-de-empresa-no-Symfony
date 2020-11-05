@@ -1,11 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Clientes{% endblock %}
-
+{% block stylesheets %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
+{% endblock %}
 {% block body %}
-    <h1>Clientes</h1>
+    {# <h1>Clientes</h1>
 
-    <table class="table">
+    <table class="table" id="lista1">
         <thead>
             <tr>
                 <th>Id</th>
@@ -39,5 +42,50 @@
         </tbody>
     </table>
 
-    <a href="{{ path('clientes_new') }}">Criar novo</a>
+    <a href="{{ path('clientes_new') }}">Criar novo</a> #}
+
+
+<div class="shadow p-3 mb-5 bg-white rounded">
+    <div class="text-right mb-3">
+    </div>
+    <table width="100%" id="lista1" class="table table-striped table-hover">
+        <thead>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+{% block javascript %}
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+<script>
+var tabela = $("#lista1").DataTable({
+  paging: true,
+    lengthChange: true,
+    searching: true,
+    ordering: true,
+    info: true,
+    autoWidth: true,
+    responsive: true,
+    columns: 
+    [
+        { data: "nome", title: "Nome"},
+        { data: "dataDeNascimento", title: "Data de Nascimento"},
+        { data: "telefone", title: "Telefone"},
+        { data: "endereco", title: "Endereço"},
+    ],ajax: {
+      url: "{{ path('cliente_ajax') }}",
+      type: "POST",
+      dataSrc: function(resp){
+        console.log(resp);
+        
+        $('#loading').remove();    
+        return resp;
+      }
+    }
+});
+</script>
+
 {% endblock %}

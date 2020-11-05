@@ -5,9 +5,11 @@ namespace App\Controller;
 use App\Entity\Clientes;
 use App\Form\ClientesType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Serializer\SerializerInterface;
 
 /**
  * @Route("/clientes")
@@ -26,6 +28,18 @@ class ClientesController extends AbstractController
         return $this->render('clientes/index.html.twig', [
             'clientes' => $clientes,
         ]);
+    }
+
+    /**
+     * @Route("/cliente-ajax", name="cliente_ajax", methods={"POST"})
+     */
+    public function clienteAjax(SerializerInterface $serialize): Response
+    {
+        $clientes = $this->getDoctrine()
+            ->getRepository(Clientes::class)
+            ->findAll();
+
+            return new JsonResponse($serialize->normalize($clientes));
     }
 
     /**

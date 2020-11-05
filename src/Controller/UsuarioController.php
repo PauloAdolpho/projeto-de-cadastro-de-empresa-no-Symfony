@@ -5,9 +5,11 @@ namespace App\Controller;
 use App\Entity\Usuario;
 use App\Form\UsuarioType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Serializer\SerializerInterface;
 
 /**
  * @Route("/usuario")
@@ -19,13 +21,24 @@ class UsuarioController extends AbstractController
      */
     public function index(): Response
     {
-        $usuarios = $this->getDoctrine()
+        $usuario = $this->getDoctrine()
             ->getRepository(Usuario::class)
             ->findAll();
 
         return $this->render('usuario/index.html.twig', [
-            'usuarios' => $usuarios,
+            'usuarios' => $usuario,
         ]);
+    }
+       /**
+     * @Route("/usuario-ajax", name="usuario_ajax", methods={"POST"})
+     */
+    public function usuarioAjax(SerializerInterface $serialize): Response
+    {
+        $usuario = $this->getDoctrine()
+            ->getRepository(Usuario::class)
+            ->findAll();
+
+            return new JsonResponse($serialize->normalize($usuario));
     }
 
     /**
