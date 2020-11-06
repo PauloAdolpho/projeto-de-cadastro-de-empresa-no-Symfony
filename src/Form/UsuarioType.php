@@ -14,7 +14,7 @@ class UsuarioType extends AbstractType
     {
         $builder
             ->add('nome')
-            ->add('eMail', null, ['label'=>'E-Mail'])
+            ->add('email', null, ['label'=>'E-Mail'])
             ->add('senha', PasswordType::class)
             ->add('nivelAcesso')
         ;

@@ -1,13 +1,46 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Usuario{% endblock %}
+{% block title %}Editar Usuário{% endblock %}
 
 {% block body %}
-    <h1>Edit Usuario</h1>
-
+    <h1>Editar Usuário</h1>
+    {{ form_start(form) }}
+  <div class="form-group">
+    <div class="container">
+      <div class="form-row">
+        <div class="col-4 m-2">
+          {{ form_label(form.nome) }} 
+          {{ form_widget(form.nome, {'attr':{'class':'form-control'}}) }}
+        </div>     
+        <div class="col-4 m-2">
+          {{ form_label(form.email) }}
+          {{ form_widget(form.email, {'attr':{'class':'form-control'}}) }}
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="form-row">
+        <div class="col-4 m-2">
+          {{ form_label(form.senha) }}
+          {{ form_widget(form.senha, {'attr':{'class':'form-control'}}) }}
+        </div>
+        <div class="col-4 m-2">
+          {{ form_label(form.nivelAcesso) }}
+          {{ form_widget(form.nivelAcesso, {'attr':{'class':'form-control'}}) }}
+        </div>         
+             
+          <div class="col-8 m-2 text-right">
+            <button type="submit" class="btn btn-primary">Submeter</button> 
+          </div>
+    </div>
+   <div class="form-row col-4 ml-2 mb-0 text-right">
     {{ include('usuario/_form.html.twig', {'button_label': 'Update'}) }}
 
     <a href="{{ path('usuario_index') }}">back to list</a>
 
     {{ include('usuario/_delete_form.html.twig') }}
+     </div> 
+   <div style="font-weight:bold" class="form-row col-4 ml-4 mt-0 text-left">
+    <a href="{{ path('clientes_index') }}">Voltar para lista</a> 
+      </div> 
 {% endblock %}
