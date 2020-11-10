@@ -2,7 +2,11 @@
 
 {% block title %}Editar cadastro{% endblock %}
 {% block body %}
+     <div class="text-center">  
     <h1>Editar</h1>
+    </div>
+    <div class="container"> 
+     <div class="shadow p-0 mb-5 bg-white rounded">
 {{ form_start(form) }}
   <div class="form-group">
     <div class="container">
@@ -58,5 +62,7 @@
         <a href="{{ path('empresa_index') }}">Voltar para Lista</a> 
       </div>
     </div>  
+    </div>
+    </div>
 {% endblock %}
 
