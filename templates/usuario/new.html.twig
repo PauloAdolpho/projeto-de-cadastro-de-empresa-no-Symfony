@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
-  {% block title %}{% endblock %}
+  {% block title %}Novo usuário{% endblock %}
   {% block body %}
+  <h1>Novo cadastro</h1>
   {{ form_start(form) }}
   <div class="form-group">
     <div class="container">
@@ -10,8 +11,8 @@
         {{ form_widget(form.nome, {'attr':{'class':'form-control'}}) }}
         </div>
         <div class="col-4 m-2">
-        {{ form_label(form.eMail) }}
-        {{ form_widget(form.eMail, {'attr':{'class':'form-control'}}) }}
+        {{ form_label(form.email) }}
+        {{ form_widget(form.email, {'attr':{'class':'form-control'}}) }}
         </div>
       </div>
     </div>
@@ -36,6 +37,9 @@
     </div>
   </div>  
   {{ form_end(form) }}
+    <div style="font-weight:bold" class="form-row col-4 ml-4 mt-0 text-">
+    <a href="{{ path('usuario_index') }}">Voltar para lista</a>  
+    </div>
 {% endblock %}
 
 

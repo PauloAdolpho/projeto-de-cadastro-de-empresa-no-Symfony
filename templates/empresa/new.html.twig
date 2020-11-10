@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
-  {% block title %}{% endblock %}
+  {% block title %}Nova Empresa{% endblock %}
   {% block body %}
+  <h1>Novo cadastro</h1>
   {{ form_start(form) }}
   <div class="form-group input-group">
     <div class="form-row ">
@@ -52,6 +53,9 @@
       </div>
       </div>
       </div>
-  </div>  
+  </div>    
   {{ form_end(form) }}
+   <div style="font-weight:bold" class="form-row col-4 ml-4 mt-0 text-">
+    <a href="{{ path('empresa_index') }}">Voltar para lista</a> 
+   </div> 
 {% endblock %} 
